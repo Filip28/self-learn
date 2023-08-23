@@ -1,1 +1,24 @@
-
+spring:
+  datasource:
+#    url: jdbc:h2:file:/data/demo   # to save h2 data to some file
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true # show sql request in console
+#    properties:
+#      hibernate:
+#        format_sql: true
+  h2:
+    console.enabled: true
+logging:
+  level:
+    org:
+#      springframework:
+#        web: DEBUG
+      hibernate: DEBUG
+server:
+  error:
+    include-stacktrace: ON_PARAM # show or not error stacktrace in response
