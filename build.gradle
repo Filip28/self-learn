@@ -6,7 +6,11 @@ plugins {
 
 group = 'com.app'
 version = '0.0.1-SNAPSHOT'
-
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(20)
+	}
+}
 repositories {
 	mavenCentral()
 }
