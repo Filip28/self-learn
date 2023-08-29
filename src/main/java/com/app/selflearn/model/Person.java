@@ -3,12 +3,12 @@ package com.app.selflearn.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-//@Table(name = "person")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
+@Entity
+@Table(name = "person")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

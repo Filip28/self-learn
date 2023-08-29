@@ -1,18 +1,18 @@
 spring:
   datasource:
-#    url: jdbc:h2:file:/data/demo   # to save h2 data to some file
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-#    show-sql: true # show sql request in console
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+  #    show-sql: true # show sql request in console
 #    properties:
 #      hibernate:
 #        format_sql: true
-  h2:
-    console.enabled: true
 logging:
   level:
     org:
