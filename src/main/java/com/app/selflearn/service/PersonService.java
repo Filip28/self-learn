@@ -1,13 +1,17 @@
 package com.app.selflearn.service;
 
 import com.app.selflearn.database.PersonRepository;
+import com.app.selflearn.exception.ResourceNotFoundException;
+import com.app.selflearn.mapper.PersonMapper;
 import com.app.selflearn.model.Person;
+import com.app.selflearn.model.PersonDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +33,14 @@ public class PersonService {
 
     public List<Person> getAdultPeople() {
         return personRepository.findAdults();
+    }
+
+    public Person create(PersonDto personDto) {
+        return Optional.ofNullable(personDto)
+                .map(p -> {
+                    Person person = PersonMapper.toPerson(personDto);
+                    return personRepository.save(person);
+                })
+                .orElseThrow(() -> new ResourceNotFoundException("Person can't be null while requesting to create it!"));
     }
 }
