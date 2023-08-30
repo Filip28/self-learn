@@ -22,3 +22,5 @@ services:
       - 'POSTGRES_DB=postgres'
       - 'POSTGRES_USER=postgres'
       - 'POSTGRES_PASSWORD=admin'
+
+# connect two containers -> https://www.baeldung.com/ops/docker-compose-communication

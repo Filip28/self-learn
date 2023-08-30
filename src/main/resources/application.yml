@@ -9,16 +9,18 @@ spring:
       ddl-auto: update
 
     show-sql: true
-  #    show-sql: true # show sql request in console
+  flyway:
+    baseline-on-migrate: true
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: admin
 #    properties:
 #      hibernate:
 #        format_sql: true
 logging:
   level:
     org:
-#      springframework:
-#        web: DEBUG
-      hibernate: DEBUG
+      hibernate: WARN
 server:
   error:
     include-stacktrace: ON_PARAM # show or not error stacktrace in response
