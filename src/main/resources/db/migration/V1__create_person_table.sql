@@ -1,4 +1,4 @@
-create table person
+create table IF NOT EXISTS person
 (
     id      bigserial primary key,
     age     integer          NOT NULL,
