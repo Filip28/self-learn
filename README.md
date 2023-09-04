@@ -1,6 +1,12 @@
 # self-learn
 
 
+### Swagger
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
 ### Docker
 
 - Build docker image 
