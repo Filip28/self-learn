@@ -5,6 +5,7 @@ import com.app.selflearn.model.PersonDto;
 import com.app.selflearn.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class PersonController {
 
     private final PersonService personService;
 
-    @GetMapping("/all")
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Person> getPerson() {
         return personService.getPersons();
     }
