@@ -14,6 +14,7 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
         - postgres
+        - redis
   postgres:
     image: 'postgres:15.2'
     ports:
@@ -22,5 +23,8 @@ services:
       - 'POSTGRES_DB=postgres'
       - 'POSTGRES_USER=postgres'
       - 'POSTGRES_PASSWORD=admin'
-
+  redis:
+    image: 'redis'
+    ports:
+      - "6379:6379"
 # connect two containers -> https://www.baeldung.com/ops/docker-compose-communication
