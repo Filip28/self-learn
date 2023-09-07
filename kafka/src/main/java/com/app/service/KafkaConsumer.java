@@ -11,6 +11,6 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "test-topic")
     public void listen(MyEvent myEvent) {
-        System.out.println(myEvent.toString());
+        System.out.printf("Received event with value: [%s]%n", myEvent.getKey());
     }
 }
