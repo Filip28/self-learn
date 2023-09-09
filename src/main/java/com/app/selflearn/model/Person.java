@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -33,4 +36,10 @@ public class Person {
     @Enumerated(EnumType.STRING)
     @NotNull
     private Gender gender;
+
+    @OneToMany(
+            mappedBy = "person",
+            cascade = CascadeType.ALL
+    )
+    private Set<Address> addresses = new HashSet<>();
 }
