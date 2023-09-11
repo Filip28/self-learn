@@ -14,6 +14,8 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     int ADULT_AGE = 18;
 
+    Optional<Person> findById(@Param("id") long id);
+
     @Query("SELECT p FROM Person p WHERE p.name = :name")
     Optional<Person> findByName(@Param("name") String name);
 
