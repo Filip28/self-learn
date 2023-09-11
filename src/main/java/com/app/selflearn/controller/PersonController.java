@@ -40,4 +40,8 @@ public class PersonController {
         return personService.create(personDto);
     }
 
+    @PutMapping("/{id}")
+    public Person updatePerson(@PathVariable long id, @RequestBody PersonDto personDto) {
+        return personService.updatePerson(id, personDto);
+    }
 }
