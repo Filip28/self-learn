@@ -1,1 +1,3 @@
 rootProject.name = 'self-learn'
+include 'kafka'
+
