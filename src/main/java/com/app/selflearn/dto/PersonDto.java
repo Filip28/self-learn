@@ -1,4 +1,4 @@
-package com.app.selflearn.model;
+package com.app.selflearn.dto;
 
 import lombok.Builder;
 
