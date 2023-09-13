@@ -2,7 +2,7 @@ package com.app.selflearn.mapper;
 
 import com.app.selflearn.model.Gender;
 import com.app.selflearn.model.Person;
-import com.app.selflearn.model.PersonDto;
+import com.app.selflearn.dto.PersonDto;
 
 public interface PersonMapper {
 

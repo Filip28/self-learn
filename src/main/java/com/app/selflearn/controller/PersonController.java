@@ -1,7 +1,7 @@
 package com.app.selflearn.controller;
 
 import com.app.selflearn.model.Person;
-import com.app.selflearn.model.PersonDto;
+import com.app.selflearn.dto.PersonDto;
 import com.app.selflearn.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

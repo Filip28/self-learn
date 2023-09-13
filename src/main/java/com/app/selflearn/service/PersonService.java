@@ -5,7 +5,7 @@ import com.app.selflearn.exception.ResourceNotFoundException;
 import com.app.selflearn.mapper.PersonMapper;
 import com.app.selflearn.model.Gender;
 import com.app.selflearn.model.Person;
-import com.app.selflearn.model.PersonDto;
+import com.app.selflearn.dto.PersonDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -21,8 +21,6 @@ import java.util.Optional;
 public class PersonService {
 
     private final PersonRepository personRepository;
-
-
     @Cacheable(value = "persons", key = "'getPersons'")
     public List<Person> getPersons() {
         return personRepository.findAll();
