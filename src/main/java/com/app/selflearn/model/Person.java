@@ -1,5 +1,6 @@
 package com.app.selflearn.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,5 +37,6 @@ public class Person {
             cascade = CascadeType.ALL
     )
     @Builder.Default
+    @JsonIgnore // todo remove that when added address
     private Set<Address> addresses = new HashSet<>();
 }
