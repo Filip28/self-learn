@@ -3,6 +3,7 @@ package com.app.selflearn.controller;
 import com.app.selflearn.model.Person;
 import com.app.selflearn.dto.PersonDto;
 import com.app.selflearn.service.PersonService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,7 +37,7 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Person createPerson(@RequestBody PersonDto personDto) {
+    public Person createPerson(@RequestBody @Valid PersonDto personDto) {
         return personService.create(personDto);
     }
 
