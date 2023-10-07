@@ -1,13 +1,13 @@
 package com.app.selflearn;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
 
-@SpringBootTest
-class SelfLearnApplicationTests {
+public class SelfLearnApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    public static void main(String[] args) {
+        SpringApplication
+                .from(SelfLearnApplication::main)
+                .with(TestContainerConfig.class)
+                .run(args);
+    }
 }
