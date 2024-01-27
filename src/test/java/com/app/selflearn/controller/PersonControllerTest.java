@@ -1,6 +1,6 @@
 package com.app.selflearn.controller;
 
-import com.app.selflearn.database.PersonRepository;
+import com.app.selflearn.repository.PersonRepository;
 import com.app.selflearn.model.Gender;
 import com.app.selflearn.model.Person;
 import com.redis.testcontainers.RedisContainer;

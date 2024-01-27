@@ -30,9 +30,9 @@ docker logs <container_id> --follow
 ```
 
 ### Docker Container
-- Run docker container
+- Run docker container to run app locally
 ```shell
-docker-compose -f docker-compose.yml up -d
+docker-compose -f docker-compose-local.yml up -d
 ```
 
 - Start only one service from specific file

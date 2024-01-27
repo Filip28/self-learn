@@ -1,6 +1,6 @@
 package com.app.selflearn.service.impl;
 
-import com.app.selflearn.database.UserRepository;
+import com.app.selflearn.repository.UserRepository;
 import com.app.selflearn.model.AuthUser;
 import com.app.selflearn.model.Role;
 import com.app.selflearn.security.JwtAuthenticationResponse;
@@ -29,7 +29,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         userRepository.findByEmail(request.getEmail())
                 .stream()
                 .findAny()
-                .ifPresent(u -> {
+                .ifPresent(_ -> {
                     throw new ResponseStatusException(HttpStatus.CONFLICT,"User with this email already exists");
                 });
         AuthUser user = AuthUser.builder()

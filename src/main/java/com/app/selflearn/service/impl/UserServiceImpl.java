@@ -1,6 +1,6 @@
 package com.app.selflearn.service.impl;
 
-import com.app.selflearn.database.UserRepository;
+import com.app.selflearn.repository.UserRepository;
 import com.app.selflearn.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
