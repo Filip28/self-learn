@@ -1,4 +1,4 @@
-package com.app.selflearn.database;
+package com.app.selflearn.repository;
 
 import com.app.selflearn.model.AuthUser;
 import org.springframework.data.jpa.repository.JpaRepository;
