@@ -2,6 +2,7 @@ package com.app.selflearn.repository;
 
 import com.app.selflearn.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -20,4 +21,8 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     @Query("SELECT p FROM Person p WHERE p.age >= :age ORDER BY p.surname")
     List<Person> findByAgeStartsWith(@Param("age") long age);
+
+    @Modifying
+    @Query(nativeQuery = true, value = "insert into person values (:person.)")
+    public abstract Person savePerson(@Param("person") Person person);
 }

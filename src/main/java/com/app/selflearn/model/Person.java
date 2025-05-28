@@ -2,10 +2,7 @@ package com.app.selflearn.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +10,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "person")
 public class Person {
@@ -37,6 +36,7 @@ public class Person {
             cascade = CascadeType.ALL
     )
     @Builder.Default
-    @JsonIgnore // todo remove that when added address
+    @JsonIgnore
+    @ToString.Exclude // todo remove that when added address
     private Set<Address> addresses = new HashSet<>();
 }

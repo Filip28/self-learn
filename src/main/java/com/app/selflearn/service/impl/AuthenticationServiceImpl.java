@@ -29,7 +29,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         userRepository.findByEmail(request.getEmail())
                 .stream()
                 .findAny()
-                .ifPresent(_ -> {
+                .ifPresent(test -> {
                     throw new ResponseStatusException(HttpStatus.CONFLICT,"User with this email already exists");
                 });
         AuthUser user = AuthUser.builder()
