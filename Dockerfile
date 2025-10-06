@@ -1,4 +1,4 @@
-FROM eclipse-temurin:20-jdk
+FROM openjdk:25
 EXPOSE 8080
 VOLUME /tmp
 RUN mkdir /app
