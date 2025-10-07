@@ -21,9 +21,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-devtools' //When we want to use devtools using testcontainers for local development
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13'
 
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
@@ -36,7 +36,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.38'
 	annotationProcessor 'org.projectlombok:lombok:1.18.38'
 
-	implementation 'org.postgresql:postgresql:42.6.0'
+	implementation 'org.postgresql:postgresql:42.7.8'
 	implementation 'org.flywaydb:flyway-core:9.21.2'
 
 	testCompileOnly 'org.projectlombok:lombok:1.18.28'
